@@ -1,5 +1,6 @@
 import './App.css'
 import { useState } from 'react';
+import axios from 'axios';
 
 const App = () => {
 const [formData, setFormData] = useState({
@@ -20,11 +21,19 @@ const handleChange = (e) => {
 };
 
 // handle sumbit
-const handleSubmit = (e) => {
+const handleSubmit = async (e) => {
   e.preventDefault();
-  alert(formData.productName);
-  console.log(formData);
+
+  try {
+    const response = await axios.post('http://localhost:3000/products', formData);
+    console.log(response.data);
+    alert('Product created successfully');
+  } catch (error) {
+    console.log(error.response?.data || error.message);
+    alert('Something went wrong');
+  }
 };
+
 
   return (
     <main className="page">
