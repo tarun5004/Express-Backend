@@ -1,4 +1,3 @@
-const e = require('express');
 let mongoose = require('mongoose');
 
 let productSchema = new mongoose.Schema({
