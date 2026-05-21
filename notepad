@@ -1,0 +1,17 @@
+Register/Login
+  -> user verify/create
+  -> accessToken generate, short expiry
+  -> refreshToken generate, long expiry
+  -> dono httpOnly cookie me set
+  -> user response
+
+Protected API
+  -> accessToken verify
+  -> valid hai to req.user set
+  -> controller run
+
+Access token expired
+  -> /refresh-token route hit
+  -> refreshToken verify
+  -> new accessToken generate
+  -> cookie update

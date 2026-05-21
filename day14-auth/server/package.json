@@ -4,6 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "format": "node scripts/format.js",
+    "format:check": "prettier --check \"src/**/*.js\" server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
@@ -18,5 +20,8 @@
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.6.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
   }
 }
